@@ -1,0 +1,24 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+*.tsbuildinfo
+
+# local database
+data/
+
+# env files and keys
+.env*
+!.env.example
+.dev.vars*
+*.pem
+
+# local tool state
+.wrangler/
+.sites-runtime/
+outputs/
+
+# misc
+.DS_Store
+*.log

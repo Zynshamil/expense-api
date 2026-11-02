@@ -1,0 +1,14 @@
+{
+  "name": "@penny/api", "version": "1.0.0", "private": true, "type": "module",
+  "scripts": {
+    "build:shared": "tsc -p shared/tsconfig.json",
+    "dev": "npm run build:shared && tsx watch src/server.ts", "build": "npm run build:shared && tsc -p tsconfig.json",
+    "start": "node dist/server.js", "typecheck": "npm run build:shared && tsc -p tsconfig.json --noEmit",
+    "test": "npm run build:shared && tsx --test test/*.test.ts",
+    "db:migrate": "tsx src/migrate.ts", "db:import-legacy": "tsx src/import-legacy.ts"
+  },
+  "dependencies": {
+    "@penny/shared": "file:./shared", "express": "^5.1.0", "drizzle-orm": "0.45.2"
+  },
+  "devDependencies": { "@types/express": "^5.0.0", "tsx": "^4.20.0", "typescript": "5.9.3", "@types/node": "^22.19.19" }
+}
